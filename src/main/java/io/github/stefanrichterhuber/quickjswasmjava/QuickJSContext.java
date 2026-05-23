@@ -298,7 +298,7 @@ public final class QuickJSContext implements AutoCloseable, Invocable {
      *
      * @param name The name of the module.
      * @param script The script to evaluate.
-     * @return The result of the script.
+     * @return A promise that resolves to <code>undefined</code> when the module finishes processing.
      */
     public CompletableFuture<Object> evalModule(String name, String script) {
         try (final MemoryLocation scriptLocation = this.writeStringToMemory(script);
